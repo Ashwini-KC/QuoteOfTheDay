@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Quote of the Day - Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Today's Inspiration</h1>
+        <div class="quote-card">
+            <blockquote class="quote-text">
+                "{{ quote.text }}"
+            </blockquote>
+            <p class="quote-author">— {{ quote.author }}</p>
+            {% if quote.category %}
+            <p class="quote-category">Category: <span>{{ quote.category }}</span></p>
+            {% endif %}
+            {% if quote.tags %}
+            <div class="quote-tags">
+                {% for tag in quote.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="actions">
+            <button class="btn btn-primary" onclick="copyQuote()">📋 Copy Quote</button>
+            <a href="/api/quote" class="btn btn-secondary">📡 API Access</a>
+        </div>
+
+        <div class="info-section">
+            <h2>About This Quote</h2>
+            <p>This is the quote of the day. Come back tomorrow for a new inspiration!</p>
+            <p>Quote #{{ quote.date_index + 1 }} from our collection.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    function copyQuote() {
+        const quoteText = document.querySelector('.quote-text').innerText;
+        const authorText = document.querySelector('.quote-author').innerText;
+        const fullQuote = quoteText + '\n' + authorText;
+        
+        navigator.clipboard.writeText(fullQuote).then(function() {
+            alert('Quote copied to clipboard!');
+        }, function(err) {
+            console.error('Could not copy quote: ', err);
+            alert('Failed to copy quote');
+        });
+    }
+</script>
+{% endblock %}

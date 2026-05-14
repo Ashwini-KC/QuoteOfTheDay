@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error - 500{% endblock %}
+
+{% block content %}
+<section class="error-page">
+    <div class="error-container">
+        <h1 class="error-code">500</h1>
+        <h2 class="error-title">Internal Server Error</h2>
+        <p class="error-message">Something went wrong on our end. Please try again later.</p>
+        
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary">🏠 Go to Home</a>
+            <a href="/api/quote" class="btn btn-secondary">📡 Try API</a>
+        </div>
+
+        <div class="error-info">
+            <p>Our team has been notified of this issue and is working on a fix.</p>
+            <p>If the problem persists, please <a href="mailto:support@example.com">contact support</a>.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
