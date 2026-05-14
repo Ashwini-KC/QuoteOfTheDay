@@ -71,7 +71,7 @@ QuoteOfTheDay/
 
 1. **Clone the repository**
    ```bash
-   cd /Users/ashwinikc/Repos/QuoteOfTheDay
+   cd "YOUR CODE REPO"
    ```
 
 2. **Create a virtual environment** (optional but recommended)
@@ -117,7 +117,7 @@ QuoteOfTheDay/
 - **GET** `/api/quote`
   ```json
   {
-    "text": "The only way to do great work is to love what you do.",
+    "quote": "The only way to do great work is to love what you do.",
     "author": "Steve Jobs",
     "date_index": 0,
     "category": "Motivation",
@@ -129,7 +129,7 @@ QuoteOfTheDay/
 - **GET** `/api/quote/<index>` - Get a specific quote by its index
   ```json
   {
-    "text": "Innovation distinguishes between a leader and a follower.",
+    "quote": "Innovation distinguishes between a leader and a follower.",
     "author": "Steve Jobs",
     "date_index": 1,
     "category": "Innovation",
@@ -141,7 +141,7 @@ QuoteOfTheDay/
 - **GET** `/api/quote/random` - Get a random quote
   ```json
   {
-    "text": "Success is not final, failure is not fatal.",
+    "quote": "Success is not final, failure is not fatal.",
     "author": "Winston Churchill",
     "date_index": 6,
     "category": "Success",
@@ -224,7 +224,7 @@ pytest --cov=app --cov-report=html
 
 ### Validation
 - Quote data structure validation
-- Quote text and author validation
+- Quote quote and author validation
 - JSON malformed data handling
 - Safe data serialization
 
@@ -232,7 +232,7 @@ pytest --cov=app --cov-report=html
 - File-based logging to `logs/app.log`
 - Console output for development
 - Configurable log levels
-- Timestamp and context in all logs
+- Timestamp and conquote in all logs
 
 ## Data Files
 
@@ -240,7 +240,7 @@ pytest --cov=app --cov-report=html
 ```json
 [
   {
-    "text": "The only way to do great work is to love what you do.",
+    "quote": "The only way to do great work is to love what you do.",
     "author": "Steve Jobs",
     "category": "Motivation",
     "tags": ["work", "inspiration"]
@@ -250,7 +250,7 @@ pytest --cov=app --cov-report=html
 
 ### Requirements
 - Minimum 365 unique quotes
-- Each quote must have `text` and `author`
+- Each quote must have `quote` and `author`
 - Optional: `category`, `tags`
 - All quotes must be properly formatted JSON
 
@@ -325,7 +325,7 @@ export FLASK_ENV=development
 
 ## License
 
-Copyright EDUBEX, 2025
+Copyright ASHWINI, 2026
 
 ## Author
 
