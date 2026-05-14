@@ -32,37 +32,37 @@ def validate_quotes_data(data: Any) -> bool:
             return False
         
         # Required fields
-        if "text" not in item or "author" not in item:
+        if "quote" not in item or "author" not in item:
             return False
         
         # Fields must be strings (or null for optional fields)
-        if not isinstance(item["text"], str) or not isinstance(item["author"], str):
+        if not isinstance(item["quote"], str) or not isinstance(item["author"], str):
             return False
         
-        # Text and author must not be empty
-        if not item["text"].strip() or not item["author"].strip():
+        # quote and author must not be empty
+        if not item["quote"].strip() or not item["author"].strip():
             return False
     
     return True
 
 
-def validate_quote_text(text: str) -> bool:
+def validate_quote_quote(quote: str) -> bool:
     """
-    Validate a quote text
+    Validate a quote quote
     
     Args:
-        text: Text to validate
+        quote: quote to validate
         
     Returns:
         True if valid, False otherwise
     """
-    if not isinstance(text, str):
+    if not isinstance(quote, str):
         return False
     
-    if len(text.strip()) == 0:
+    if len(quote.strip()) == 0:
         return False
     
-    if len(text) > 5000:
+    if len(quote) > 5000:
         return False
     
     return True

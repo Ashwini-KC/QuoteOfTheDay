@@ -7,8 +7,8 @@
     <div class="hero-content">
         <h1>Today's Inspiration</h1>
         <div class="quote-card">
-            <blockquote class="quote-text">
-                "{{ quote.text }}"
+            <blockquote class="quote-quote">
+                "{{ quote.quote }}"
             </blockquote>
             <p class="quote-author">— {{ quote.author }}</p>
             {% if quote.category %}
@@ -38,11 +38,11 @@
 
 <script>
     function copyQuote() {
-        const quoteText = document.querySelector('.quote-text').innerText;
-        const authorText = document.querySelector('.quote-author').innerText;
-        const fullQuote = quoteText + '\n' + authorText;
+        const quotequote = document.querySelector('.quote-quote').innerquote;
+        const authorquote = document.querySelector('.quote-author').innerquote;
+        const fullQuote = quotequote + '\n' + authorquote;
         
-        navigator.clipboard.writeText(fullQuote).then(function() {
+        navigator.clipboard.writequote(fullQuote).then(function() {
             alert('Quote copied to clipboard!');
         }, function(err) {
             console.error('Could not copy quote: ', err);

@@ -1,5 +1,5 @@
 """
-Copywrite EDUBEX, 2025
+Copywrite ASHWINI, 2026
 Author: ASHWINI
 CreatedDate: 14 May 2026
 LastModifiedDate: 14 May 2026
@@ -13,7 +13,7 @@ from typing import Optional
 @dataclass
 class Quote:
     """Quote model representing a single quote"""
-    text: str
+    quote: str
     author: str
     date_index: int
     category: Optional[str] = None
@@ -22,7 +22,7 @@ class Quote:
     def to_dict(self):
         """Convert quote to dictionary"""
         return {
-            "text": self.text,
+            "quote": self.quote,
             "author": self.author,
             "date_index": self.date_index,
             "category": self.category,
@@ -33,7 +33,7 @@ class Quote:
     def from_dict(cls, data: dict) -> "Quote":
         """Create Quote instance from dictionary"""
         return cls(
-            text=data.get("text", ""),
+            quote=data.get("quote", ""),
             author=data.get("author", "Unknown"),
             date_index=data.get("date_index", 0),
             category=data.get("category"),
@@ -41,4 +41,4 @@ class Quote:
         )
     
     def __str__(self):
-        return f'"{self.text}" - {self.author}'
+        return f'"{self.quote}" - {self.author}'
